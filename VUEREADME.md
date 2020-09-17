@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+9:20 - 10: vVue
+10:00- 11:00 Web component research
+11:00 - 11:30 Vue
+11:30 - 1:40: frontend sidebar

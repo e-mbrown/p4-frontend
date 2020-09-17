@@ -1,24 +1,19 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <Header/>
-
-      
-    </div>
+    <!-- Brings in the content from view based on the url! -->
     <router-view/>
-    <Footer/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header'
-import Footer from './components/Footer'
+// import Header from './components/Header'
+// import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
-    Header,
-    Footer
+    // Header,
+    // Footer
   }
   
 }
