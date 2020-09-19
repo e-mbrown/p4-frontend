@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Sidebar></Sidebar>
-    <Content></Content>
+    <Content v-bind:banner_head="b_head" v-bind:banner_text="b_text"></Content>
   </div>
 </template>
 
@@ -17,8 +17,16 @@ export default {
   components: {
     Sidebar,
     Content
-  }
-}
+  },
+    data: function() {
+        return{
+            message: "Hello",
+            b_head:"Browse all Games",
+            b_text:"",
+            
+        }
+    },
+}  
 </script>
 <style>
   .home{

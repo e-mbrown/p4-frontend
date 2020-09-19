@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- Brings in the content from view based on the url! -->
-    <router-view/>
+    <router-view @loggedIn="logged($event)" @signed="signUp($event)" />
   </div>
 </template>
 
@@ -14,7 +14,32 @@ export default {
   components: {
     // Header,
     // Footer
-  }
+  },
+  data: function() {
+        return{
+            game: [],
+            URL: "http:/localhost:8000",
+            loggedIn: false,
+            token:'' ,
+            info:{},
+        }
+    },
+    methods: {
+      logged: function(event){
+        console.log(event)
+        this.loggedIn = true
+        this.info= event
+        this.token = event.token
+        this.$router.push("/")
+      },
+      signUp: function(event){
+        console.log(event)
+        this.loggedIn = true
+        this.info= event
+        this.token = event.token
+        this.$router.push("/")
+      }
+    }
   
 }
 </script>

@@ -4,11 +4,11 @@
             <h1 class="title">Recreation</h1>
             <i class="fa fa-paper-plane-o subtitle is-3" aria-hidden="true"></i>
         </div>
-        <button id="first" class="level-item button">Store</button>
-        <button id="second" class="button">Personal</button>
-        <button id="third" class="button">Signin</button>
-        <button id="third" class="button">Register</button>
-
+        <b-button tag="router-link" id="first" class="level-item button" to="">Store</b-button>
+        <b-button tag="router-link" id="second" class="button" to="">Personal</b-button>
+        <b-button tag="router-link" id="third" class="button" to="/login">Signin</b-button>
+        <b-button tag="router-link" id="third" class="button" to="/register">Register</b-button>
+        
 </div>
 </template>
 
