@@ -14,15 +14,18 @@
                 </ul>
             </div>
             <div class='products'>
-                <div v-for="game in games" :key="game">
-                    <img :src="game.cover" :alt="game.name">
+               <div class='display' v-for="game in games" :key="game">
+                    <router-link to="/game">
+                        <img role="link" @click="changeId(game.id)" :src="game.cover" :alt="game.name">
+                    </router-link>
                 </div>
+            
             </div>
         </div>
     </div>
 </template>
 <script>
-    
+    import gameStore from '../stores/GamesStore.js'
 export default {
     name: 'Content',
     props: ["banner_head", "banner_text",],
@@ -47,6 +50,10 @@ export default {
                 this.games = data
                 console.log(this.games)
             })
+        },
+        changeId: function(id) {
+            console.log(id)
+            gameStore.methods.changeId(id)
         }
     }
 }
@@ -71,12 +78,12 @@ export default {
         padding: 10px;
         text-align: left;
     }
-    .products{
+    .products {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
     }
-    .products > div {
+    .display {
         flex: 0 49%;
     }
 

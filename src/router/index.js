@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Page2 from '../views/Page2.vue'
 import Login from "../views/Login.vue"
 import Signup from "../views/Signup.vue"
+import Gamepage from '../views/Gamepage.vue'
 
 
 Vue.use(VueRouter)
@@ -28,6 +29,11 @@ Vue.use(VueRouter)
     path: "/register",
     name: "Signup",
     component: Signup
+  },
+  {
+    path: "/game",
+    name: "Gamepage",
+    component: Gamepage
   }
 ]
 
