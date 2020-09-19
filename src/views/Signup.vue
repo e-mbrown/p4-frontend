@@ -48,7 +48,7 @@ export default {
     },
     methods: {
         handleSign: function(){
-            fetch(`http://localhost:8000/auth/users/register/`, {
+            fetch(`${this.$URL}/auth/users/register/`, {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",

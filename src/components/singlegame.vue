@@ -22,7 +22,7 @@ export default {
     methods: {
         retrieveGame() {
             console.log(this.game)
-            fetch(`http://localhost:8000/gaming/games/${this.game}/`, {
+            fetch(`${this.$URL}/gaming/games/${this.game}/`, {
                 method: "get",
                 headers:{
                     "Content-Type": "application/json"

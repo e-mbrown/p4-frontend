@@ -30,7 +30,7 @@ export default {
     },
     methods: {
         handleLogin: function(){
-            fetch(`http://localhost:8000/auth/users/login/`, {
+            fetch(`${this.$URL}/auth/users/login/`, {
                 method: "post",
                 headers: {
                     "Content-Type": "application/json",

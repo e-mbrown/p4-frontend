@@ -39,7 +39,7 @@ export default {
     },
     methods: {
         getGames: function() {
-            fetch(`http://localhost:8000/gaming/games/`, {
+            fetch(`${this.$URL}/gaming/games/`, {
                 method: "get",
                 headers:{
                     "Content-Type": "application/json"

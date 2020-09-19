@@ -4,6 +4,8 @@ import router from "./router";
 import Buefy from "buefy";
 import "buefy/dist/buefy.css";
 
+Vue.prototype.$URL = 'http://localhost:8000'
+
 Vue.use(Buefy);
 
 Vue.config.productionTip = false;
