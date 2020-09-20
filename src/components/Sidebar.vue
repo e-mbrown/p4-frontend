@@ -4,10 +4,11 @@
             <h1 class="title">Recreation</h1>
             <i class="fa fa-paper-plane-o subtitle is-3" aria-hidden="true"></i>
         </div>
-        <b-button tag="router-link" id="first" class="level-item button" to="">Store</b-button>
+        <b-button tag="router-link" id="first" class="level-item button" to="/">Store</b-button>
         <b-button tag="router-link" id="second" class="button" to="">Personal</b-button>
-        <b-button tag="router-link" id="third" class="button" to="/login">Signin</b-button>
-        <b-button tag="router-link" id="third" class="button" to="/register">Register</b-button>
+        <b-button tag="router-link" id="third" class="button" to="/login" v-if="!loggedIn">Signin</b-button>
+        <b-button id="third" class="button" v-if="loggedIn" @click="logout">Logout</b-button>
+        <b-button tag="router-link" id="third" class="button" to="/register" v-if="!loggedIn">Register</b-button>
         
 </div>
 </template>
@@ -15,8 +16,11 @@
 <script>
 export default {
     name: 'Sidebar',
-    props: {
-        
+    props: ["loggedIn"],
+    methods: {
+        logout: function(){
+            this.$emit("logout")
+        }
     }
 }
 </script>

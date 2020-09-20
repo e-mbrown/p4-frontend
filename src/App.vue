@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Sidebar :loggedIn="loggedIn" @logout="logout()"/>
     <!-- Brings in the content from view based on the url! -->
     <router-view @loggedIn="logged($event)" @signed="signUp($event)" />
   </div>
@@ -7,13 +8,13 @@
 
 <script>
 // import Header from './components/Header'
-// import Footer from './components/Footer'
+import Sidebar from '@/components/Sidebar.vue'
 
 export default {
   name: 'App',
+
   components: {
-    // Header,
-    // Footer
+    Sidebar,
   },
   data: function() {
         return{
@@ -38,6 +39,10 @@ export default {
         this.info= event
         this.token = event.token
         this.$router.push("/")
+      },
+      logout: function() {
+        this.loggedIn = false;
+        this.token = ''
       }
     }
   
@@ -51,6 +56,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  display: grid;
+  grid-template-columns: [a] 1.25fr [b] 4fr [c];
 }
 
 #nav {

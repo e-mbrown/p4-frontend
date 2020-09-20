@@ -53,5 +53,13 @@ export default {
     width: 90%;
     margin: 10px auto
 }
+.card{
+        display: block;
+        position: relative;
+        width: 100%;
+        height: 50vh;
+        margin: auto;
+        background-color: olive;
+    }
 
 </style>

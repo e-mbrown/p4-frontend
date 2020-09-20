@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import gameStore from '../stores/GamesStore.js'
 
 export default {
     name:"Login",
@@ -29,6 +30,19 @@ export default {
         }
     },
     methods: {
+         collect: function(id) {
+            fetch(`${this.$URL}/auth/many/${id}/`, {
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                    gameStore.data.user = data
+            })
+        
+        },
         handleLogin: function(){
             fetch(`${this.$URL}/auth/users/login/`, {
                 method: "post",
@@ -43,6 +57,8 @@ export default {
             .then(response => response.json())
             .then((data) => {
                 if(data.token) {
+                    console.log(data.id)
+                    this.collect(data.id)
                     this.$emit('loggedIn', data)
                 }
                 else {
@@ -50,10 +66,12 @@ export default {
                 }
             })
         },
-        check: function(){
-            
-        }
-    
 }
 }
 </script>
+
+<style>
+.Login {
+    margin: auto;
+}
+</style>

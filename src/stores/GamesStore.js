@@ -1,6 +1,7 @@
 const gameStore = {
     data:{
-        id:'',
+        id:1,
+        user: '',
     },
     methods: {
         changeId(id){
@@ -11,3 +12,4 @@ const gameStore = {
 }
 
 export default gameStore
+
