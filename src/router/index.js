@@ -5,6 +5,8 @@ import Page2 from '../views/Page2.vue'
 import Login from "../views/Login.vue"
 import Signup from "../views/Signup.vue"
 import Gamepage from '../views/Gamepage.vue'
+import Personal from '../views/Personal.vue'
+// import { component } from 'vue/types/umd'
 
 
 Vue.use(VueRouter)
@@ -34,6 +36,12 @@ Vue.use(VueRouter)
     path: "/game",
     name: "Gamepage",
     component: Gamepage
+  },
+  {
+    path: "/personal",
+    name: "Personal",
+    component: Personal
+
   }
 ]
 

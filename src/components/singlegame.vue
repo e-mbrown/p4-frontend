@@ -20,52 +20,6 @@
         <br>
         <br>
         <br>
-        <!-- <div class="review is-fluid">
-        <b-field label="Header" :label-position="labelPosition">
-            <b-input v-model="header" value=""></b-input>
-        </b-field>
-
-        <b-field label="Email"
-            :label-position="labelPosition"
-            type="is-danger"
-            message="This email is invalid">
-            <b-input type="email"
-                value="john@"
-                maxlength="30">
-            </b-input>
-        </b-field>
-
-        <b-field label="Username"
-            :label-position="labelPosition"
-            type="is-success"
-            message="This username is available">
-            <b-input value="johnsilver" maxlength="30"></b-input>
-        </b-field>
-
-        <b-field label="Password"
-            :label-position="labelPosition"
-            type="is-warning">
-            <b-input value="123" type="password" maxlength="30"></b-input>
-            <template slot="message">
-                <div>Password is too short</div>
-                <div>Password must have at least 8 characters</div>
-            </template>
-        </b-field>
-
-        <b-field label="Subject"
-            :label-position="labelPosition">
-            <b-select placeholder="Select a subject">
-                <option value="1">Option 1</option>
-                <option value="2">Option 2</option>
-            </b-select>
-        </b-field>
-
-        <b-field label="Message"
-            :label-position="labelPosition">
-            <b-input maxlength="200" type="textarea"></b-input>
-        </b-field>
-    </div> -->
-    {{game}}
     </div>
 </template>
 
@@ -125,7 +79,6 @@ export default {
         addWish() {
             const newList= this.user.watch_list.map(game => game.id)
             newList.push(this.game)
-            console.log(newList)
             fetch(`${this.$URL}/auth/many/${this.user.id}/`, {
                 method: "patch",
                 headers:{
@@ -137,6 +90,8 @@ export default {
                 })
             })
             .then((response) => console.log(response))
+            
+            this.user.watch_list = newList
         },
     }
 }
