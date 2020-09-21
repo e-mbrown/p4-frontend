@@ -30,7 +30,7 @@ export default {
         }
     },
     methods: {
-         collect: function(id) {
+        collect: function(id) {
             fetch(`${this.$URL}/auth/many/${id}/`, {
                 method: "get",
                 headers: {
@@ -39,6 +39,7 @@ export default {
             })
             .then((response) => response.json())
             .then((data) => {
+                    console.log(data)
                     gameStore.data.user = data
             })
         
@@ -57,8 +58,9 @@ export default {
             .then(response => response.json())
             .then((data) => {
                 if(data.token) {
-                    console.log(data.id)
+                    console.log(data.token)
                     this.collect(data.id)
+                    gameStore.data.token = data.token
                     this.$emit('loggedIn', data)
                 }
                 else {

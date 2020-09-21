@@ -28,7 +28,7 @@
     import gameStore from '../stores/GamesStore.js'
 export default {
     name: 'Content',
-    props: ["banner_head", "banner_text",],
+    props: ["token","banner_head", "banner_text",],
     data: function() {
         return{
             games:'',

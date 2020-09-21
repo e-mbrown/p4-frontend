@@ -1,5 +1,6 @@
 const gameStore = {
     data:{
+        token:'',
         id:1,
         user: '',
     },
