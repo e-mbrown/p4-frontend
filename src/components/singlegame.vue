@@ -12,7 +12,7 @@
                 </div>
                 <footer class="card-footer">
                     <a class="card-footer-item" @click="addWish">Add to wishlist</a>
-                    <a class="card-footer-item">Owned</a>
+                    <a class="card-footer-item" @click="addOwn">Owned</a>
                     <a class="card-footer-item">Delete</a>
                 </footer>
                 
@@ -118,19 +118,46 @@ export default {
         },
         addWish() {
             const newList= this.user.watch_list.map(game => game.id)
-            newList.push(this.game)
-            fetch(`${this.$URL}/auth/many/${this.user.id}/`, {
-                method: "patch",
-                headers:{
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    // wishlist: this.user.watch_list,
-                    watch_list: newList
-                })
-            })
-            .then((response) => console.log(response))
+            if(newList.includes(this.game)){
             
+                console.log('Game is already in wish list')
+            }
+            else{
+                newList.push(this.game)
+                fetch(`${this.$URL}/auth/many/${this.user.id}/`, {
+                    method: "patch",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // wishlist: this.user.watch_list,
+                        watch_list: newList
+                    })
+                })
+                .then((response) => console.log(response))
+            }
+            this.user.watch_list = newList
+        },
+        addOwn() {
+            const newList= this.user.games.map(game => game.id)
+            if(newList.includes(this.game)){
+            
+                console.log('Game is already owned')
+            }
+            else{
+                newList.push(this.game)
+                fetch(`${this.$URL}/auth/many/${this.user.id}/`, {
+                    method: "patch",
+                    headers:{
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        // wishlist: this.user.watch_list,
+                        games: newList
+                    })
+                })
+                .then((response) => console.log(response))
+            }
             this.user.watch_list = newList
         },
         upReq(id){
