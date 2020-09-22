@@ -34,6 +34,9 @@
 
 <script>
 
+import gameStore from '../stores/GamesStore.js'
+
+
 export default {
     name:"Signup",
     props: [],
