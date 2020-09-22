@@ -1,7 +1,7 @@
 <template>
     <div id="personal">
 
-        <h3 class='subtitle'>Games you're watching</h3>
+        <h3 id="a" class='subtitle'>Games you're watching</h3>
         <div id='wishlist'>
             <div class="games" v-for="game in watchList" :key="game">
                 <a :id="game.id">
@@ -10,7 +10,7 @@
             </div>
         </div>
 
-            <h3 class="subtitle"> Games you own</h3>
+            <h3 id="b" class="subtitle"> Games you own</h3>
         <div id='owned'>
             <div class="games" v-for="game in owned" :key="game">
                 <a :id="game.id" @click="isComponentModalActive = true, c_id = game.id">
@@ -19,10 +19,10 @@
             </div>
         </div>
 
-        <h3 class="subtitle">Your Reviews</h3>
+        <h3 id="c" class="subtitle">Your Reviews</h3>
         <div class="reviews"  :v-if="revLen > 0">
             <div>
-                <p>You haven't written a review yet! Play a game you own and tell the world your opinion!</p>
+                <p class="text">You haven't written a review yet! Play a game you own and tell the world your opinion!</p>
             </div>
         </div>
 
@@ -141,6 +141,9 @@ export default {
 </script>
 
 <style>
+  body{
+        background-color: #15434D;
+    }
     #personal{
          height: 100vh;
     overflow-x: scroll;
@@ -155,5 +158,8 @@ export default {
         width: 200px;
         height: 300px;
         margin: auto;
+    }
+    .text, #a, #b, #c{
+    color:#B39C8E;
     }
 </style>

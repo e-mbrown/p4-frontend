@@ -7,10 +7,10 @@
         </div>
         <div id="content-contain">
             <div class='sorter'>
-                <h2 class="subtitle">Sort</h2>
+                <h2 id="a" class="subtitle">Sort</h2>
                 <ul>
-                    <li>Release Date</li>
-                    <li>Alphabetical - A to Z</li>
+                    <li class ="text">Release Date</li>
+                    <li class=text>Alphabetical - A to Z</li>
                 </ul>
             </div>
             <div class='products'>
@@ -59,18 +59,23 @@ export default {
 }
 </script>
 <style>
+    body{
+        background-color: #15434D;
+    }
     #games{
         width: 95%;
         margin: 15px auto;
         height: 100vh;
         overflow-x: scroll;
+        background-color: #15434D;
     }
     #banner{
         background-image: url("../assets/bn.png");
         background-size: cover;
+        background-position: 60% 50%;
         width: 100%;
         background-color: black;
-        height: 35%;
+        height: 45%;
         text-align: left;
         padding: 10px;
     }
@@ -87,6 +92,9 @@ export default {
     }
     .display {
         flex: 0 49%;
+    }
+    .text, #a{
+    color:#B39C8E;
     }
 
 

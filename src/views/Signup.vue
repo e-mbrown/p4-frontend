@@ -97,3 +97,15 @@ export default {
 }
 }
 </script>
+
+<style>
+    body{
+        background-color: #15434D;
+    }
+    .Signup {
+    margin: auto;
+}
+.label{
+    color:#B39C8E;
+}
+</style>

@@ -73,7 +73,13 @@ export default {
 </script>
 
 <style>
+body{
+        background-color: #15434D;
+}
 .Login {
     margin: auto;
+}
+.label{
+    color:#B39C8E;
 }
 </style>

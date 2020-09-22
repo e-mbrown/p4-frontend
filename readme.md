@@ -18,9 +18,10 @@ Recreation is a gaming Ecommerce site that takes inspiration from pre-existing s
 | CRUD on Reviews| H | 3hr | 4hr 30min | -hr|
 | Login,logout, and Register | H | 2hr | 30min | -hr|
 | Put/Patch request on many to many fields | H | 2hr | 7hr | -hr|
-| Styling | H | 3hr | 3hr | -hr|
+| Styling | H | 3hr | 4hr | -hr|
 | Mobile view | H | 1hr | 2hr | -hr|
-| Total | H | 16hrs| 20hrs | -hrs |
+| Deployment + debug| H | 4hr | 7hr | -hr|
+| Total | H | 20hrs| 28rs | -hrs |
 
 #### PostMVP
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
@@ -44,6 +45,12 @@ The repository for the frontend of your application should include:
 - Your API Backend must be deployed to Heroku and your front-end must be deployed to
   Netlify. Applications that are not deployed will be considered incomplete.
  
-#### Additional libraries
+#### Issues and Resolutions
+Cors: was blocked by CORS policy: NO 'Acess-Control-Allow-Origin' header is present on the requested resource. If an oopaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled
+Solution: Capitalizing the Patch in my patch request
+```
+fetch(`${this.$URL}/auth/many/${this.user.id}/`, {
+    method: "PATCH",
+```
 
 --
