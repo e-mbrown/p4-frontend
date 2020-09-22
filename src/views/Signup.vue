@@ -47,6 +47,20 @@ export default {
         }
     },
     methods: {
+        collect: function(id) {
+            fetch(`${this.$URL}/auth/many/${id}/`, {
+                method: "get",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+            })
+            .then((response) => response.json())
+            .then((data) => {
+                    console.log(data)
+                    gameStore.data.user = data
+            })
+        
+        },
         handleSign: function(){
             fetch(`${this.$URL}/auth/users/register/`, {
                 method: "post",
@@ -65,6 +79,7 @@ export default {
             .then((data) => {
                 console.log(data)
                 if(data.username) {
+                    this.collect(data.id)
                     this.$emit('signed', data)
                 }
                 else {
