@@ -118,6 +118,7 @@ export default {
         },
         addWish() {
             const newList= this.user.watch_list.map(game => game.id)
+            console.log(newList)
             if(newList.includes(this.game)){
             
                 console.log('Game is already in wish list')
@@ -125,9 +126,12 @@ export default {
             else{
                 newList.push(this.game)
                 fetch(`${this.$URL}/auth/many/${this.user.id}/`, {
-                    method: "patch",
+                    method: "PATCH",
                     headers:{
                         "Content-Type": "application/json"
+                    },
+                    options: {
+                        mode: 'no-cors'
                     },
                     body: JSON.stringify({
                         // wishlist: this.user.watch_list,

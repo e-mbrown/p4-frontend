@@ -98,12 +98,10 @@ export default {
             revLen: 0,
             token: gameStore.data.token,
             c_id:"",
-            
         }
     },
     created: function(){
-    
-    this.revLen = gameStore.data.user.reviews.length()
+        this.collectR(gameStore.data.user.id)
     },
     methods: {
         collectR: function(id) {

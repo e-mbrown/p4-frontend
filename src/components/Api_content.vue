@@ -66,9 +66,11 @@ export default {
         overflow-x: scroll;
     }
     #banner{
+        background-image: url("../assets/bn.png");
+        background-size: cover;
         width: 100%;
         background-color: black;
-        height: 25%;
+        height: 35%;
         text-align: left;
         padding: 10px;
     }

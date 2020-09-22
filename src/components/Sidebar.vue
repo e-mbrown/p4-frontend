@@ -63,7 +63,7 @@ export default {
         font-family: 'Lobster', cursive;
         color: #fcba91;
     }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 800px) {
         #sidebar{
             grid-template-columns: [aa] 3fr [ab] .5fr [ac];
             grid-template-rows: [a]1fr[b];
